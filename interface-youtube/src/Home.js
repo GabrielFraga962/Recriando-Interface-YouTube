@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, AppBar, Toolbar, IconButton, Button, Box, Typography, ListSubheader, Divider, ListItemText, ListItemIcon, ListItem, List, Drawer, Grid, Hidden  } from '@material-ui/core';
+import { makeStyles, AppBar, Toolbar, IconButton, Button, Box, Typography, ListSubheader, Divider, ListItemText, ListItemIcon, ListItem, List, Drawer, Grid, Hidden, Switch  } from '@material-ui/core';
 
 import { useTheme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -151,7 +151,7 @@ const videos = [
 
 ];
 
-function Home() {
+function Home({darkModel, setDarkModel}) {
     const classes = useStyles();
     const theme = useTheme();
 
@@ -164,7 +164,7 @@ function Home() {
       </IconButton>
       <img src={theme.palette.type ==='dark' ? "/images/branco.png" : "/images/preto.png"} alt="logo" className={classes.logo} />      
       <div className={classes.grow} />
-
+      <Switch value={darkModel} onChange={() => setDarkModel(!darkModel)} className={classes.icons} />
       <IconButton  className={classes.icons} >
       <VideoCallIcon />
       </IconButton>
