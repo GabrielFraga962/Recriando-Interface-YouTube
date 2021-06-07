@@ -1,17 +1,19 @@
-import React from 'react';
-import { ThemeProvider, createMuiTheme, } from '@material-ui/core';
+import React, {useState} from 'react';
+import { ThemeProvider, createMuiTheme, makeStyles, } from '@material-ui/core';
 import Home from './Home';
 
-// const useStyles = makeStyles ({
-//   root: {
-//   },
-// })
+const useStyles = makeStyles ({
+  root: {
+  },
+})
 
 function App() {
+  const [darkModel, setDarkModel] = useState(false);
+
   const theme = createMuiTheme({
     spacing: 4,
     palette: {
-      type: 'dark',
+      type: darkModel? 'dark' : 'light',
       primary: {
         main: '#f44336',
       },
@@ -19,18 +21,18 @@ function App() {
         main: '#3EA6FF',
       },
       background: {
-        default: '#232323',
-        dark: '#181818',
-        paper: '#232323',
+        default: darkModel? '#232323' : '#fff',
+        dark: darkModel? '#181818' : '#f4f6f8',
+        paper: darkModel? '#232323' : '#fff',
       }
     }
   });
 
-  // const classes =useStyles();
+  const classes =useStyles();
 
   return ( 
   <ThemeProvider theme={theme}>
-   <Home />
+   <Home darkModel={darkModel} setDarkModel={setDarkModel}/>
   </ThemeProvider>
   );
 }
