@@ -9,3 +9,7 @@ O repositório conterá o projeto da Interface do YouTube, utilizando o ReactJ e
 
 # Resultado final da aplicação
 ![Clone YouTube](https://i.imgur.com/Qo9h1sa.png)
+
+# Licença 📑
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://opensource.org/licenses/MIT) para mais detalhes.
